@@ -1,0 +1,75 @@
+/* Container: Fullscreen and vertically centered */
+.upload-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  /* Card Style */
+  .upload-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 767px;
+    width: 90%; /* Responsive width */
+    padding: 30px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .upload-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #343a40;
+    padding-bottom: 20px;
+  }
+  
+  /* Description */
+  .upload-description {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  /* File Upload Wrapper */
+  .file-upload-wrapper {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  /* Styled File Input */
+  .upload-label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .file-input {
+    display: none; /* Hides default file input */
+  }
+  
+  /* Note */
+  .upload-note {
+    font-size: 0.9rem;
+  }
+  
+  /* Upload Button */
+  .btn-success {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  
+  /* Ensure no scrollbar appears */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
