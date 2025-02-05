@@ -34,7 +34,7 @@
   /* Navbar Items */
   .navbar-nav {
     display: flex;
-    gap: 30px; /* Increased spacing between nav items */
+    gap: 20px; /* Increased spacing between nav items */
   }
   
   .nav-item .nav-link {

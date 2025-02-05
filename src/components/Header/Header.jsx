@@ -54,7 +54,10 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={() => navigate("/upload/aadhar-card")}>Aadhar Card</a>
-              </li> 
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" onClick={() => navigate("/upload/pan-card")}>PAN Card</a>
+              </li>
             </ul>
           </div>
         </nav>

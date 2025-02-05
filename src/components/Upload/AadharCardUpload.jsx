@@ -36,7 +36,7 @@ const AadharCardUpload = () => {
         formDataFront.append("front_image", aadharFront, "aadhar_front.jpg");
     
         const formDataBack = new FormData();
-        formDataBack.append("back_image", aadharBack, "aadhar_back.jpg");
+        formDataBack.append("file", aadharBack, "aadhar_back.jpg");
     
         try {
             // Sending both API requests in parallel
@@ -45,7 +45,7 @@ const AadharCardUpload = () => {
                     method: "POST",
                     body: formDataFront,
                 }),
-                fetch("http://140.245.21.255:8085/upload_image", {
+                fetch("http://140.245.21.255:8086/extract", {
                     method: "POST",
                     body: formDataBack,
                 }),
@@ -54,9 +54,9 @@ const AadharCardUpload = () => {
             const resultFront = await responseFront.json();
             const resultBack = await responseBack.json();
     
-            // console.log("Front Image Response:", resultFront);
-            // console.log("Back Image Response:", resultBack);
-            // console.log("Extracted Address:", resultBack.extracted_info.Address);
+            console.log("Front Image Response:", resultFront);
+            console.log("Back Image Response:", resultBack);
+            console.log("Extracted Address:", resultBack.extracted_info.Address);
     
             if (responseFront.ok && responseBack.ok) {
                 setExtractedData({
@@ -69,7 +69,7 @@ const AadharCardUpload = () => {
                     dob: resultFront.details?.dob || resultBack.details?.dob || "N/A",
                     gender: resultFront.details?.gender || resultBack.details?.gender || "N/A",
                     aadhaar_number: resultFront.details?.aadhaar_number || resultBack.extracted_info?.aadhaar_number || "N/A",
-                    address: resultBack.extracted_info.Address || "N/A",
+                    address: resultBack.Address || "N/A",
                     Son_Daughter_of: resultBack.extracted_info?.Son_Daughter_of || "N/A",
                 });
             } else {
@@ -113,7 +113,7 @@ const AadharCardUpload = () => {
                             <h2 className="upload-title mb-2">Aadhar Card Details</h2>
                             <div className="aadhar-extracted-content">
                                 <div className="aadhar-title"><b>Name</b>: {details.name || "N/A"}</div>
-                                <div className="aadhar-title"><b>Fother's name</b>: {details.Son_Daughter_of || "N/A"}</div>
+                                {/* <div className="aadhar-title"><b>Father's name</b>: {details.Son_Daughter_of || "N/A"}</div> */}
                                 <div className="aadhar-title"><b>DOB</b>: {details.dob || "N/A"}</div>
                                 <div className="aadhar-title"><b>Gender</b>: {details.gender || "N/A"}</div>
                                 <div className="aadhar-title"><b>Aadhar Number</b>: {details.aadhaar_number || "N/A"}</div>
