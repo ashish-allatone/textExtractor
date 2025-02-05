@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6521c2c0.css",
+    "main.js": "/static/js/main.0d77cb39.js",
+    "static/js/488.c8c15331.chunk.js": "/static/js/488.c8c15331.chunk.js",
+    "static/media/aadhar-front.png": "/static/media/aadhar-front.ef01b60d9c3ad78cea21.png",
+    "static/media/dummy-pan-card.png": "/static/media/dummy-pan-card.eb89593cc5af356393fd.png",
+    "static/media/aadhar-back.png": "/static/media/aadhar-back.b6304ec96155d0872d0f.png",
+    "index.html": "/index.html",
+    "main.6521c2c0.css.map": "/static/css/main.6521c2c0.css.map",
+    "main.0d77cb39.js.map": "/static/js/main.0d77cb39.js.map",
+    "488.c8c15331.chunk.js.map": "/static/js/488.c8c15331.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6521c2c0.css",
+    "static/js/main.0d77cb39.js"
+  ]
+}
