@@ -28,27 +28,31 @@ const PanCardUpload = () => {
         }
     
         const formDataFront = new FormData();
-        formDataFront.append("front_image", panFront, "pan_front.jpg");
+        formDataFront.append("file", panFront, "pan_front.jpg");
     
         try {
             // Sending both API requests in parallel
-            const responseFront = await fetch("http://140.245.21.255:8084/upload_image", {
+            const responseFront = await fetch("http://140.245.21.255:8087/extract_pan_info", {
                 method: "POST",
                 body: formDataFront,
             })
     
             const resultFront = await responseFront.json();
     
-            // console.log("Front Image Response:", resultFront);
+            console.log("Front Image Response:", resultFront);
             // console.log("Back Image Response:", resultBack);
             // console.log("Extracted Address:", resultBack.extracted_info.Address);
     
             if (responseFront.ok) {
                 setExtractedData({
-                    front: resultFront.extracted_text || "No data extracted from front image",
+                    front: resultFront.extracted_info || "No data extracted from front image",
                 });
                 setDetails({
                     // getting information from api TO-DO
+                    name: resultFront.extracted_info.name || "N/A",
+                    dob: resultFront.extracted_info.dob || "N/A",
+                    pan_number: resultFront.extracted_info.pan_number || "N/A",
+                    father_name: resultFront.extracted_info.father_name || "N/A",
                 });
                 
             } else {
@@ -92,11 +96,9 @@ const PanCardUpload = () => {
                             <h2 className="upload-title mb-2">Pan Card Details</h2>
                             <div className="pan-extracted-content">
                                 <div className="pan-title"><b>Name</b>: {details.name || "N/A"}</div>
-                                <div className="pan-title"><b>Father's name</b>: {details.Son_Daughter_of || "N/A"}</div>
+                                <div className="pan-title"><b>Father's name</b>: {details.father_name || "N/A"}</div>
                                 <div className="pan-title"><b>DOB</b>: {details.dob || "N/A"}</div>
-                                <div className="pan-title"><b>Gender</b>: {details.gender || "N/A"}</div>
-                                <div className="pan-title"><b>Pan Number</b>: {details.aadhaar_number || "N/A"}</div>
-                                <div className="pan-title"><b>Address</b>: {details.address || "N/A"}</div>
+                                <div className="pan-title"><b>Pan Number</b>: {details.pan_number || "N/A"}</div>
                             </div>
                         </div>
                     )}
