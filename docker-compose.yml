@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  react-app:
+    image: ashish2429/text_extractor:1.0
+    platform: linux/arm64
+    ports:
+      - "3600:80" # Map port 80 in the container to port 3000 on the host
+    restart: always
