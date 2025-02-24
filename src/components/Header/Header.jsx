@@ -53,6 +53,9 @@ const Header = () => {
                 <a className="nav-link" onClick={() => navigate("/")}>PDF Extractor</a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" onClick={() => navigate("/pdf-summary")}>PDF Summary</a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" onClick={() => navigate("/upload/aadhar-card")}>Aadhar Card</a>
               </li>
               <li className="nav-item">

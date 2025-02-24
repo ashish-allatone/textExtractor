@@ -1,0 +1,11 @@
+.text-pre{
+    text-align: left;
+    white-space: pre-wrap; /* Ensures text formatting is maintained */ 
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }

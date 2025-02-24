@@ -10,6 +10,7 @@ import DropboxUpload from "./components/Upload/DropboxUpload";
 import OneDriveUpload from "./components/Upload/OneDriveUpload";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import PDFSummary from "./components/Upload/PDFSummary";
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<TextExtractor/>} />
+        <Route path="/pdf-summary" element={<PDFSummary/>} />
         <Route path="/upload/aadhar-card" element={<AadharCardUpload/>} />
         <Route path="/upload/pan-card" element={<PanCardUpload />} />
         {/* <Route path="/upload/local" element={<LocalUpload/>} />
