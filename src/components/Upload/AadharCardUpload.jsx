@@ -41,15 +41,15 @@ const AadharCardUpload = () => {
         try {
             // Sending both API requests in parallel
             const [responseFront, responseBack] = await Promise.all([
-                fetch("http://140.245.21.255:8084/upload_image", {
+                fetch("http://155.248.245.165:8084/upload_image", {
                     method: "POST",
                     body: formDataFront,
                 }),
-                fetch("http://140.245.21.255:8086/extract", {
+                fetch("http://155.248.245.165:8086/extract", {
                     method: "POST",
                     body: formDataBack,
                 }),
-                fetch("http://140.245.21.255:8085/upload_image", {
+                fetch("http://155.248.245.165:8085/upload_image", {
                     method: "POST",
                     body: formDataBack,
                 }),

@@ -32,7 +32,7 @@ const PanCardUpload = () => {
     
         try {
             // Sending both API requests in parallel
-            const responseFront = await fetch("http://140.245.21.255:8087/extract_pan_info", {
+            const responseFront = await fetch("http://155.248.245.165:8087/extract_pan_info", {
                 method: "POST",
                 body: formDataFront,
             })

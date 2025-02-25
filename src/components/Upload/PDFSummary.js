@@ -23,7 +23,7 @@ const PDFSummary = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await fetch("http://155.248.245.165:8087/upload", {
+      const response = await fetch("http://155.248.245.165:8088/upload", {
         method: "POST",
         body: formData,
       });
